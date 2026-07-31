@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SolidState Fabric | Raw PCM transport ohne Umweg</title>
+    <meta
+      name="description"
+      content="SolidState Fabric transportiert Raw PCM ueber IP, mit Bit-perfect-Transport, Discovery, Statuskanal und vielen Integrationspfaden fuer Hi-Res-Systeme."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-elevates>
+      <a class="brand" href="#top" aria-label="SolidState Fabric Start">
+        <span class="brand-text">
+          <strong data-i18n="brand_title">SolidState Fabric</strong>
+          <small data-i18n="brand_subtitle">Audio Platform</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
+        <a href="#overview" data-i18n="nav_overview">Overview</a>
+        <a href="#features" data-i18n="nav_features">Features</a>
+        <a href="#integration" data-i18n="nav_integration">Integration</a>
+        <a href="#evidence" data-i18n="nav_evidence">Evidence</a>
+        <a href="#resources" data-i18n="nav_resources">Resources</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language switch">
+          <button type="button" class="lang-button is-active" data-lang="de" aria-pressed="true">DE</button>
+          <button type="button" class="lang-button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <span class="header-badge" data-i18n="made_germany_badge">Made in Germany</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">RAW PCM TRANSPORT / SYSTEM PLATFORM</p>
+          <h1 data-i18n="hero_title">Move audio as it was made.</h1>
+          <p class="hero-text" data-i18n="hero_text">
+            SolidState keeps the transport layer low-level and predictable while
+            raw PCM moves across IP. Discovery, diagnostics, and return-channel
+            status are built in, and the platform stays open to many
+            integration paths: music servers, embedded sinks, DAC bridges, lab
+            rigs, and partner firmware.
+          </p>
+          <p class="hero-subcopy" data-i18n="hero_subcopy">
+            Made for Hi-Res. Made in Germany. USB Audio Class is one input path, not the product identity.
+          </p>
+
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#features" data-i18n="cta_features">See features</a>
+            <a class="button secondary" href="#integration" data-i18n="cta_integration">Explore integration</a>
+            <a class="button secondary" href="#evidence" data-i18n="cta_evidence">Open evidence</a>
+            <a class="button secondary" href="waterfall/" data-i18n="cta_waterfall">Waterfall demo</a>
+          </div>
+
+          <div class="hero-badges" aria-label="Key hints">
+            <span data-i18n="badge_bitperfect">Bit-perfect by design</span>
+            <span data-i18n="badge_hires">Made for Hi-Res</span>
+            <span data-i18n="badge_noresample">No resampling</span>
+            <span data-i18n="badge_multiintegration">Multi-integration</span>
+            <span data-i18n="badge_status">Return-channel status</span>
+          </div>
+        </div>
+
+        <aside class="signal-card" aria-label="Signal path overview">
+          <div class="signal-card-head">
+            <p data-i18n="signal_label">THE SIGNAL PATH</p>
+            <h2 data-i18n="signal_title">Signal path / Signalpfad</h2>
+          </div>
+
+          <div class="signal-grid">
+            <section class="signal-column">
+              <h3 data-i18n="sources_title">Sources</h3>
+              <ul>
+                <li data-i18n="source_1">USB Audio Class input</li>
+                <li data-i18n="source_2">Music servers</li>
+                <li data-i18n="source_3">Custom app / capture rig</li>
+                <li data-i18n="source_4">Live input / lab feed</li>
+              </ul>
+            </section>
+
+            <section class="signal-column signal-platform">
+              <h3 data-i18n="platform_title">Platform</h3>
+              <ul>
+                <li data-i18n="platform_1">Bit-perfect transport</li>
+                <li data-i18n="platform_2">Discovery & topology</li>
+                <li data-i18n="platform_3">Return-channel status</li>
+                <li data-i18n="platform_4">Diagnostics & telemetry</li>
+                <li data-i18n="platform_5">Protocol management</li>
+                <li data-i18n="platform_6">Security & integrity</li>
+              </ul>
+            </section>
+
+            <section class="signal-column">
+              <h3 data-i18n="endpoints_title">Endpoints</h3>
+              <ul>
+                <li data-i18n="endpoint_1">DACs</li>
+                <li data-i18n="endpoint_2">Receivers</li>
+                <li data-i18n="endpoint_3">AV hosts</li>
+                <li data-i18n="endpoint_4">Network players</li>
+                <li data-i18n="endpoint_5">OEM systems</li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="signal-legend" aria-label="Signal legend">
+            <span><i></i><span data-i18n="legend_audio">Audio (PCM)</span></span>
+            <span><i></i><span data-i18n="legend_control">Control / Discovery</span></span>
+            <span><i></i><span data-i18n="legend_status">Status / Telemetry</span></span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section split" id="features">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="feature_eyebrow">FEATURES / FUNKTIONEN</p>
+          <h2 data-i18n="feature_title">Built for Hi-Res chains, engineered for proof.</h2>
+          <p data-i18n="feature_intro">
+            Die Seite verkauft keine Box. Sie verkauft die Plattform-Features,
+            die ein Audio-System verstaendlich, integrierbar und messbar machen.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="feature1_title">Bit-perfect transport</h3>
+            <p data-i18n="feature1_text">PCM bleibt Raw PCM. Keine Kompression, kein DSP, kein verstecktes Reframing.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="feature2_title">Made for Hi-Res</h3>
+            <p data-i18n="feature2_text">Gedacht fuer 44.1 / 48 / 96 / 192 kHz Zielketten und klare Formatregeln.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="feature3_title">Discovery ready</h3>
+            <p data-i18n="feature3_text">Kompatible Endpunkte sichtbar machen, statt sie hard-coded zu verstecken.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3 data-i18n="feature4_title">Status channel</h3>
+            <p data-i18n="feature4_text">Buffer, Jitter, Loss und Clock-Infos gehen im Takt zurueck an die Quelle.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3 data-i18n="feature5_title">Flexible deployment</h3>
+            <p data-i18n="feature5_text">Linux, embedded targets, receiver services und browsernahe Sicht auf einen Stack.</p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3 data-i18n="feature6_title">Evidence trail</h3>
+            <p data-i18n="feature6_text">Hash-Proofs, Tests, Traceability und Release-Doku statt Marketing-Nebel.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section integration" id="integration">
+        <div class="section-intro narrow">
+          <p class="eyebrow" data-i18n="integration_eyebrow">INTEGRATION / INTEGRATION</p>
+          <h2 data-i18n="integration_title">Fits into existing stacks without asking them to become something else.</h2>
+          <p data-i18n="integration_intro">
+            Quellen, Receiver, OEM-Firmware und Lab-Setups bekommen jeweils
+            ihren eigenen Integrationspfad. Der USB-Audio-Class-Treiber ist ein
+            möglicher Eingang, nicht der Markenmittelpunkt.
+          </p>
+        </div>
+
+        <div class="tab-shell">
+          <div class="tab-row" role="tablist" aria-label="Integration scenarios">
+            <button type="button" class="tab-button is-active" role="tab" aria-selected="true" data-tab-target="sources" data-i18n="tab_sources">Sources</button>
+            <button type="button" class="tab-button" role="tab" aria-selected="false" data-tab-target="receivers" data-i18n="tab_receivers">Receivers</button>
+            <button type="button" class="tab-button" role="tab" aria-selected="false" data-tab-target="oem" data-i18n="tab_oem">OEM</button>
+            <button type="button" class="tab-button" role="tab" aria-selected="false" data-tab-target="lab" data-i18n="tab_lab">Lab</button>
+          </div>
+
+          <div class="tab-panels">
+            <article class="tab-panel is-active" data-tab-panel="sources">
+              <div>
+                <p class="panel-label" data-i18n="panel1_label">Best fit</p>
+                <h3 data-i18n="panel1_title">USB Audio Class driver implementation, music servers, capture tools.</h3>
+                <p data-i18n="panel1_text">
+                  Ideal when you already own the playback app or source path and
+                  want the transport layer to stay predictable on the way to the network.
+                </p>
+              </div>
+              <ul>
+                <li data-i18n="panel1_b1">Low-level USB Audio Class input path</li>
+                <li data-i18n="panel1_b2">Raw PCM forwarding without hidden conversion</li>
+                <li data-i18n="panel1_b3">Discovery, capability match, and status feedback</li>
+              </ul>
+            </article>
+
+            <article class="tab-panel" data-tab-panel="receivers">
+              <div>
+                <p class="panel-label" data-i18n="panel2_label">Best fit</p>
+                <h3 data-i18n="panel2_title">Linux services, embedded sinks, DAC bridges.</h3>
+                <p data-i18n="panel2_text">
+                  The endpoint sees packets, not guesses. That keeps playback,
+                  diagnostics, and output behavior aligned.
+                </p>
+              </div>
+              <ul>
+                <li data-i18n="panel2_b1">ALSA, I2S, or custom receiver backend</li>
+                <li data-i18n="panel2_b2">Return-channel telemetry for runtime visibility</li>
+                <li data-i18n="panel2_b3">Format negotiation with explicit capability metadata</li>
+              </ul>
+            </article>
+
+            <article class="tab-panel" data-tab-panel="oem">
+              <div>
+                <p class="panel-label" data-i18n="panel3_label">Best fit</p>
+                <h3 data-i18n="panel3_title">OEM firmware, SDKs, and partner products.</h3>
+                <p data-i18n="panel3_text">
+                  When the product must ship inside another brand's stack, the
+                  platform gives you a controlled technical contract.
+                </p>
+              </div>
+              <ul>
+                <li data-i18n="panel3_b1">Protocol docs, release evidence, and version policy</li>
+                <li data-i18n="panel3_b2">Integration guidance for partner hardware and software</li>
+                <li data-i18n="panel3_b3">Clear boundary between transport core and adapters</li>
+              </ul>
+            </article>
+
+            <article class="tab-panel" data-tab-panel="lab">
+              <div>
+                <p class="panel-label" data-i18n="panel4_label">Best fit</p>
+                <h3 data-i18n="panel4_title">Validation rigs, impairment tests, and QA.</h3>
+                <p data-i18n="panel4_text">
+                  Proof beats claims. The lab path is there to show what the
+                  stream did, when, and why.
+                </p>
+              </div>
+              <ul>
+                <li data-i18n="panel4_b1">Hash comparisons and packet-flow simulation</li>
+                <li data-i18n="panel4_b2">Waterfall and status views for live inspection</li>
+                <li data-i18n="panel4_b3">Traceability from spec to recorded result</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="integration-coverage">
+          <article>
+            <h3 data-i18n="cov1_title">USB Audio Class</h3>
+            <p data-i18n="cov1_text">One possible source path, especially when the source app already owns playback.</p>
+          </article>
+          <article>
+            <h3 data-i18n="cov2_title">Music servers</h3>
+            <p data-i18n="cov2_text">Roon-like servers, local libraries, and network audio stacks.</p>
+          </article>
+          <article>
+            <h3 data-i18n="cov3_title">Receivers & DACs</h3>
+            <p data-i18n="cov3_text">Direct bridges, endpoint services, and OEM sink integrations.</p>
+          </article>
+          <article>
+            <h3 data-i18n="cov4_title">Partner firmware</h3>
+            <p data-i18n="cov4_text">A controlled transport layer for another brand's device or platform.</p>
+          </article>
+          <article>
+            <h3 data-i18n="cov5_title">Lab & QA</h3>
+            <p data-i18n="cov5_text">Bit-perfect proof, impairment testing, and traceable release checks.</p>
+          </article>
+          <article>
+            <h3 data-i18n="cov6_title">Browser visibility</h3>
+            <p data-i18n="cov6_text">Waterfall and status views for operator-facing inspection without touching PCM.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section snippet-section" id="low-level">
+        <div class="section-intro narrow">
+          <p class="eyebrow" data-i18n="snippet_eyebrow">LOW-LEVEL / LOW-LEVEL</p>
+          <h2 data-i18n="snippet_title">The transport starts at the protocol core, not at the surface.</h2>
+          <p data-i18n="snippet_text">
+            The code stays close to the bytes: explicit headers, sequence
+            numbers, sample counters, and CRC. That is the low-level posture
+            the page should signal.
+          </p>
+        </div>
+
+        <div class="code-panel" aria-label="Protocol core snippet">
+          <div class="code-panel-head">
+            <span data-i18n="code_panel_label">Protocol core</span>
+            <strong data-i18n="code_panel_title">Forward header</strong>
+          </div>
+          <pre><code>typedef struct {
+    uint32_t magic;
+    uint8_t version;
+    uint8_t flags;
+    uint16_t header_bytes;
+    uint32_t sequence;
+    uint64_t sample_counter;
+    uint64_t timestamp_us;
+} pcm_proto_forward_header_t;</code></pre>
+          <p data-i18n="snippet_note">Representative excerpt from the transport core.</p>
+        </div>
+      </section>
+
+      <section class="section evidence" id="evidence">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="evidence_eyebrow">EVIDENCE / EVIDENZ</p>
+          <h2 data-i18n="evidence_title">Designed to make Hi-Res trust visible.</h2>
+          <p data-i18n="evidence_intro">
+            The product story gets stronger when the proof is easy to find:
+            hashes, tests, topology, and a repeatable release path.
+          </p>
+        </div>
+
+        <div class="evidence-metrics">
+          <article><span>0</span><p data-i18n="metric1_text">codecs in the core transport</p></article>
+          <article><span>20 ms</span><p data-i18n="metric2_text">jitter buffer baseline</p></article>
+          <article><span>100 ms</span><p data-i18n="metric3_text">return-channel cadence</p></article>
+          <article><span>192 kHz</span><p data-i18n="metric4_text">documented transport target</p></article>
+        </div>
+
+        <div class="proof-table" role="table" aria-label="Proof checkpoints">
+          <div class="proof-row proof-head" role="row">
+            <div role="columnheader" data-i18n="proof_header1">Checkpoint</div>
+            <div role="columnheader" data-i18n="proof_header2">What it shows</div>
+            <div role="columnheader" data-i18n="proof_header3">Why it matters</div>
+          </div>
+          <div class="proof-row" role="row">
+            <div role="cell" data-i18n="proof_row1a">Protocol tests</div>
+            <div role="cell" data-i18n="proof_row1b">CRC, packet layout, discovery logic</div>
+            <div role="cell" data-i18n="proof_row1c">Bit-perfect behavior stays verifiable</div>
+          </div>
+          <div class="proof-row" role="row">
+            <div role="cell" data-i18n="proof_row2a">Signal-chain proof</div>
+            <div role="cell" data-i18n="proof_row2b">Matching SHA-256 hashes on the PCM payload</div>
+            <div role="cell" data-i18n="proof_row2c">The stream survived transport unchanged</div>
+          </div>
+          <div class="proof-row" role="row">
+            <div role="cell" data-i18n="proof_row3a">Reference tools</div>
+            <div role="cell" data-i18n="proof_row3b">Linux sender, receiver, smoke tests</div>
+            <div role="cell" data-i18n="proof_row3c">Integration stories can be reproduced</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section resources" id="resources">
+        <div class="resources-copy">
+          <p class="eyebrow" data-i18n="resources_eyebrow">RESOURCES / RESSOURCEN</p>
+          <h2 data-i18n="resources_title">Start with the brief. Then trace the proof.</h2>
+          <p data-i18n="resources_intro">
+            The landing page points to the documents people actually need when
+            they evaluate a platform: brief, bundle, boundary, and result.
+          </p>
+        </div>
+
+        <div class="resource-links">
+          <a href="../docs/PRODUCT_BRIEF.md">Product Brief</a>
+          <a href="../docs/EVALUATION_BUNDLE.md">Evaluation Bundle</a>
+          <a href="../docs/ESP_TO_LP10_SIGNALCHAIN_RESULT.md">Signal-Chain Result</a>
+          <a href="../docs/TRACEABILITY_MATRIX.md">Traceability Matrix</a>
+          <a href="../docs/PUBLIC_RELEASE_BOUNDARY.md">Release Boundary</a>
+          <a href="waterfall/">Waterfall Demo</a>
+        </div>
+
+        <div class="resources-badge">
+          <strong data-i18n="resources_badge_title">Made in Germany</strong>
+          <span data-i18n="resources_badge_text">Bit-perfect platform layer for Hi-Res systems and OEM integrations.</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p>SolidState Audio Platform</p>
+        <p class="footer-note" data-i18n="footer_note">Raw PCM transport. Bit-perfect by design. Made in Germany.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer resources">
+        <a href="../docs/PRODUCT_BRIEF.md">Product Brief</a>
+        <a href="../docs/RELEASE_CHECKLIST.md">Release Checklist</a>
+        <a href="../docs/RELEASE_EVIDENCE_INDEX.md">Evidence Index</a>
+        <a href="../docs/PUBLIC_REPO_INDEX.md">Public Repo Index</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

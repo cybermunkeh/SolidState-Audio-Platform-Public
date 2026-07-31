@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest a product, documentation, or GitHub publication improvement.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be added or improved?
+      placeholder: Describe the requested improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why it matters
+      description: Explain how this supports productization, evaluation, or public GitHub readiness.
+      placeholder: Why is this useful?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Call out whether the change should be public-safe, partner-only, or private.
+      placeholder: Public-safe / Partner-only / Private
+    validations:
+      required: true

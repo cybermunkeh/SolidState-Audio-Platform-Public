@@ -1,0 +1,28 @@
+name: Bug report
+description: Report a problem with documentation, public-safe export, or product behavior.
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened and what you expected instead.
+      placeholder: Describe the issue in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include commands, logs, file paths, or screenshots that help reproduce the issue.
+      placeholder: Paste the most useful evidence here.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Explain why the issue matters for productization, evaluation, or public GitHub readiness.
+      placeholder: What does this block or weaken?
+    validations:
+      required: true
