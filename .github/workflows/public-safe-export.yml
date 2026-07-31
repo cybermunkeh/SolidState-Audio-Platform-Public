@@ -1,0 +1,44 @@
+name: Public-safe export
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'docs/**'
+      - 'website/**'
+      - 'publish/public-safe-release/**'
+      - '.github/workflows/public-safe-export.yml'
+  push:
+    branches:
+      - main
+      - codex/**
+    paths:
+      - 'README.md'
+      - 'docs/**'
+      - 'website/**'
+      - 'publish/public-safe-release/**'
+      - '.github/workflows/public-safe-export.yml'
+
+jobs:
+  export-public-safe:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Export public-safe package
+        run: |
+          & "$env:GITHUB_WORKSPACE\publish\public-safe-release\export-public-safe.ps1" `
+            -SourceRoot "$env:GITHUB_WORKSPACE" `
+            -OutputRoot "$env:RUNNER_TEMP\public-safe-github-ci" `
+            -ManifestPath "$env:GITHUB_WORKSPACE\publish\public-safe-release\PUBLIC_FILE_LIST.txt"
+
+      - name: Verify exported file set and entry points
+        run: |
+          & "$env:GITHUB_WORKSPACE\publish\public-safe-release\verify-public-safe-export.ps1" `
+            -SourceRoot "$env:GITHUB_WORKSPACE" `
+            -ExportRoot "$env:RUNNER_TEMP\public-safe-github-ci" `
+            -ManifestPath "$env:GITHUB_WORKSPACE\publish\public-safe-release\PUBLIC_FILE_LIST.txt"
